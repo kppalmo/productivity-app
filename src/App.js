@@ -19,7 +19,7 @@ class App extends Component{
         this.setState({[event.target.name]: event.target.value})
     }
     addTask = event =>{
-        event.preventDefault();
+        event.preventDefault(); //this prevents server refreshing when newTask is added
         let newTask = {
             task: this.state.todo,
             id: Date.now(),
@@ -39,11 +39,16 @@ class App extends Component{
         });
         this.setState({todos, todo: ''})
     }
+    removeItems = event => {
+        event.preventDefault();
+    }
+           
 
     render() {
         return (
             <div className="App">
-                <h1>To-Do List </h1>
+                <h1>Productivity App </h1>
+                <h2>Created by Keegan Palmo</h2>
                 <TodoForum
                 todos={this.state.todos}
                 value ={this.state.todo}
