@@ -30,6 +30,15 @@ class App extends Component{
             todo: ''
         })
     }
+    toggleComplete = itemId => { //map over array checking todo ID to itemID => if ID=itemID set boolean to opposite
+        const todos = this.state.todos.map(todo => {
+            if (todo.id === itemId) {
+                todo.completed = !todo.completed
+            }
+            return todo
+        });
+        this.setState({todos, todo: ''})
+    }
 
     render() {
         return (
@@ -41,7 +50,8 @@ class App extends Component{
                 inputChangeHandler={this.inputChangeHandler}
                 addTask={this.addTask}/>
                 <TodoList
-                todos={this.state.todos}/>
+                todos={this.state.todos}
+                toggleComplete={this.toggleComplete}/>
 
             </div>
         );
