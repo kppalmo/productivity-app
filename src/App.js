@@ -18,7 +18,7 @@ class App extends Component{
     inputChangeHandler = event => {
         this.setState({[event.target.name]: event.target.value})
     }
-    addTask = event =>{
+    addTask = event =>{ //adds a task to list
         event.preventDefault(); //this prevents server refreshing when newTask is added
         let newTask = {
             task: this.state.todo,
