@@ -31,7 +31,7 @@ class App extends Component{
             todo: ''
         })
     }
-    toggleComplete = itemId => { //map over array checking todo ID to itemID => if ID=itemID set boolean to opposite => NOT WORKING YET
+    toggleComplete = itemId => { //map over array checking todo ID to itemID => if ID=itemID set boolean to opposite 
         const todos = this.state.todos.map(todo => {
             if (todo.id === itemId) {
                 todo.completed = !todo.completed
@@ -40,7 +40,7 @@ class App extends Component{
         });
         this.setState({todos, todo: ''})
     }
-    removeItems = event => {
+    removeItems = event => { //=> NOT WORKING YET
         event.preventDefault();
         this.setState(prevState => {
           return {
@@ -50,10 +50,6 @@ class App extends Component{
           }
         })
       }
-    
-
- 
-
     addLocalStorage() { //takes item in state => renders data on screen
         for (let key in this.state) { //loops through items
             if (localStorage.hasOwnProperty(key)) { //checks to see if keys == keys
