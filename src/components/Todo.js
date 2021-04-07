@@ -8,7 +8,7 @@ const Todo = props => {
             <button onClick={event => {
                 props.toggleComplete(props.todo.id)
             }}> Completed</button>
-            <p>{props.todo.task}</p>
+            <p style={{ color: "red"}}>{props.todo.task}</p>
         </div>
     )
 }
