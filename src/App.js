@@ -41,7 +41,49 @@ class App extends Component{
     }
     removeItems = event => {
         event.preventDefault();
+        this.setState(prevState => { //checks most recent state
+            return {
+                todos: prevState.todos.filter(todo => { //filters to check if completed or not => creates new array of only completed
+                    return !todo.completed;
+                })
+            }
+        })
     }
+    addLocalStorage() { //takes item in state => renders data on screen
+        for (let key in this.state) { //loops through items
+            if (localStorage.hasOwnProperty(key)) { //checks to see if keys == keys
+                let value = localStorage.getItem(key);
+                try {
+                    value = JSON.parse(value); //converts item strings to javaObject => localStorage only reads objects
+                    this.setState({[key]: value}) //sets with unique value
+                }
+                catch (event){ //fail safe method if above =>try<= causes errors
+                    this.setState({[key]: value})
+                }
+            }
+        }
+    }
+    saveLocalStorage(){//this stores the data on app exit
+        for (let key in this.state) {
+            localStorage.setItem(key, JSON.stringify(this.state[key])) //gather data on state and save to localStorage
+        }
+
+    }
+    componentDidMount() {
+        this.addLocalStorage();
+        window.addEventListener(
+            "beforeunload",
+            this.saveLocalStorage.bind(this)
+        )
+    }
+    componentWillUnmount(){
+        window.removeEventListener(
+            "beforeunload",
+            this.saveLocalStorage.bind(this)
+        )
+    }
+
+    
            
 
     render() {
@@ -53,7 +95,8 @@ class App extends Component{
                 todos={this.state.todos}
                 value ={this.state.todo}
                 inputChangeHandler={this.inputChangeHandler}
-                addTask={this.addTask}/>
+                addTask={this.addTask}
+                removeTask={this.removeItems}/>
                 <TodoList
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/>

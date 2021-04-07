@@ -10,8 +10,9 @@ const  TodoForum = props => {
             onChange={props.inputChangeHandler}
             placeholder = 'Enter a Task' />
             <button
-                onClick = {props.addTask}>Add Task</button>
-            <button>Remove Tasks</button>
+                onClick = {props.addTask}>Add Task</button> 
+            <button
+                onClick = {props.removeItems}>Remove Tasks</button>
 
         </form>
     )
