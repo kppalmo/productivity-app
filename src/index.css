@@ -11,13 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.center{
+.treeLogo{
   text-align: center;
   display: block;
   justify-content: center;
   align-items: center;
   margin: auto;
   width: 35%;
+}
+
+.reactLogo{
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 5%;
 }
 .button {
   background-color: #96837e;

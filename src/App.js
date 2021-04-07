@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TodoForum from './components/TodoForum';
 import TodoList from './components/TodoList';
 import treeLogo from './treeLogo.png';
+import logo512 from './logo512.png';
 
 class App extends Component{
     constructor(props) { //constructs empty todos list and todo 
@@ -45,7 +46,7 @@ class App extends Component{
         this.setState(prevState => {
           return {
             todos: prevState.todos.filter(todo => {
-              return !todo.completed;
+              return todo.completed;
             })
           }
         })
@@ -83,12 +84,12 @@ class App extends Component{
             this.saveLocalStorage.bind(this)
         )
     }
-    
+   
     render() {
         return (
             <div className="App">
                 <h1 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Productivity App </h1>
-                <img  src={treeLogo} alt={'logo'} class="center"></img>
+                <img  src={treeLogo} alt={'logo'} class="treeLogo"></img>
                 <h3 style={{ padding: "5px 10px", textAlign: "center", color: "grey"}}>Created by Keegan Palmo</h3>
                 <TodoForum 
                 todos={this.state.todos}
@@ -96,9 +97,11 @@ class App extends Component{
                 inputChangeHandler={this.inputChangeHandler}
                 addTask={this.addTask}
                 removeTask={this.removeItems}/>
-                <TodoList
+                <TodoList 
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/>
+                <img  src={logo512} alt={'logo'} class="reactLogo"></img>
+
                 
 
             </div>
