@@ -50,10 +50,8 @@ class App extends Component{
           }
         })
       }
-    removeAll = event => { //remove All items in local storage 
-        window.localStorage.clear();
-        //window.localStorage.removeItem("itemID");
-    }
+    
+
  
 
     addLocalStorage() { //takes item in state => renders data on screen
