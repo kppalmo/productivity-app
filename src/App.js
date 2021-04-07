@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoForum from './components/TodoForum';
 import TodoList from './components/TodoList';
+import treeLogo from './treeLogo.png';
 
 class App extends Component{
     constructor(props) { //constructs empty todos list and todo 
@@ -89,15 +90,12 @@ class App extends Component{
         )
     }
     
-
-    
-           
-
     render() {
         return (
             <div className="App">
                 <h1 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Productivity App </h1>
-                <h2 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Created by Keegan Palmo</h2>
+                <img  src={treeLogo} alt={'logo'} class="center"></img>
+                <h2 style={{ padding: "5px 10px", textAlign: "center", color: "grey"}}>Created by Keegan Palmo</h2>
                 <TodoForum 
                 todos={this.state.todos}
                 value ={this.state.todo}
@@ -107,6 +105,7 @@ class App extends Component{
                 <TodoList
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/>
+                
 
             </div>
         );
