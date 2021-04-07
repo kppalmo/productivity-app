@@ -4,7 +4,7 @@ import Todo from './Todo';
 
 const TodoList = props => {
   return (
-    <div>
+    <div style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>
       {props.todos.map((todo, id) => (
         <Todo
           todo={todo}

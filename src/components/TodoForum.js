@@ -2,7 +2,7 @@ import React from 'react';
 
 const  TodoForum = props => {
     return(
-        <form>
+        <form style={{ padding: "10px 20px", textAlign: "center", color: "white"}}>
             <input
             name = 'todo'
             value={props.value}
@@ -12,7 +12,7 @@ const  TodoForum = props => {
             <button
                 onClick = {props.addTask}>Add Task</button> 
             <button
-                onClick = {props.removeItems}>Remove Tasks</button>
+                onClick = {props.removeAll}>Remove Tasks</button>
 
         </form>
     )

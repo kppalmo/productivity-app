@@ -30,7 +30,7 @@ class App extends Component{
             todo: ''
         })
     }
-    toggleComplete = itemId => { //map over array checking todo ID to itemID => if ID=itemID set boolean to opposite
+    toggleComplete = itemId => { //map over array checking todo ID to itemID => if ID=itemID set boolean to opposite => NOT WORKING YET
         const todos = this.state.todos.map(todo => {
             if (todo.id === itemId) {
                 todo.completed = !todo.completed
@@ -49,6 +49,12 @@ class App extends Component{
             }
         })
     }
+    removeAll = event => { //remove All items in local storage 
+        window.localStorage.clear();
+        //window.localStorage.removeItem("itemID");
+    }
+ 
+
     addLocalStorage() { //takes item in state => renders data on screen
         for (let key in this.state) { //loops through items
             if (localStorage.hasOwnProperty(key)) { //checks to see if keys == keys
@@ -89,14 +95,14 @@ class App extends Component{
     render() {
         return (
             <div className="App">
-                <h1>Productivity App </h1>
-                <h2>Created by Keegan Palmo</h2>
-                <TodoForum
+                <h1 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Productivity App </h1>
+                <h2 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Created by Keegan Palmo</h2>
+                <TodoForum 
                 todos={this.state.todos}
                 value ={this.state.todo}
                 inputChangeHandler={this.inputChangeHandler}
                 addTask={this.addTask}
-                removeTask={this.removeItems}/>
+                removeTask={this.removeAll}/>
                 <TodoList
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/>
