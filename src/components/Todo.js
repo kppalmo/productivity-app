@@ -3,11 +3,11 @@ import React from 'react';
 const Todo = props => {
     
     return (
-        <div>
+        <div
             key = {props.todo.id}
-            <button onClick={event => {
+            onClick={event  => {
                 props.toggleComplete(props.todo.id)
-            }}> Completed</button>
+            }}>
             <p style={{ color: "red"}}>{props.todo.task}</p>
         </div>
     )

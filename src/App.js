@@ -41,14 +41,14 @@ class App extends Component{
     }
     removeItems = event => {
         event.preventDefault();
-        this.setState(prevState => { //checks most recent state
-            return {
-                todos: prevState.todos.filter(todo => { //filters to check if completed or not => creates new array of only completed
-                    return !todo.completed;
-                })
-            }
+        this.setState(prevState => {
+          return {
+            todos: prevState.todos.filter(todo => {
+              return !todo.completed;
+            })
+          }
         })
-    }
+      }
     removeAll = event => { //remove All items in local storage 
         window.localStorage.clear();
         //window.localStorage.removeItem("itemID");
@@ -88,6 +88,7 @@ class App extends Component{
             this.saveLocalStorage.bind(this)
         )
     }
+    
 
     
            
@@ -102,7 +103,7 @@ class App extends Component{
                 value ={this.state.todo}
                 inputChangeHandler={this.inputChangeHandler}
                 addTask={this.addTask}
-                removeTask={this.removeAll}/>
+                removeTask={this.removeItems}/>
                 <TodoList
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/>
