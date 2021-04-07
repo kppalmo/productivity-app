@@ -4,6 +4,7 @@ import TodoList from './components/TodoList';
 import treeLogo from './treeLogo.png';
 import logo512 from './logo512.png';
 
+
 class App extends Component{
     constructor(props) { //constructs empty todos list and todo 
         super(props);
@@ -72,14 +73,14 @@ class App extends Component{
 
     }
     componentDidMount() {
-        this.addLocalStorage();
+        this.addLocalStorage(); //calls when page loads => fills in local data from previous state
         window.addEventListener(
             "beforeunload",
             this.saveLocalStorage.bind(this)
         )
     }
     componentWillUnmount(){
-        window.removeEventListener(
+        window.removeEventListener( //removes event listener when unloading page
             "beforeunload",
             this.saveLocalStorage.bind(this)
         )
@@ -101,10 +102,10 @@ class App extends Component{
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/>
                 <img  src={logo512} alt={'logo'} class="reactLogo"></img>
-
                 
 
             </div>
+            
         );
     }
 }
