@@ -95,7 +95,7 @@ class App extends Component{
             <div className="App">
                 <h1 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Productivity App </h1>
                 <img  src={treeLogo} alt={'logo'} class="center"></img>
-                <h2 style={{ padding: "5px 10px", textAlign: "center", color: "grey"}}>Created by Keegan Palmo</h2>
+                <h3 style={{ padding: "5px 10px", textAlign: "center", color: "grey"}}>Created by Keegan Palmo</h3>
                 <TodoForum 
                 todos={this.state.todos}
                 value ={this.state.todo}
