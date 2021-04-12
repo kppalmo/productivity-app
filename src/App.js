@@ -3,6 +3,11 @@ import TodoForum from './components/TodoForum';
 import TodoList from './components/TodoList';
 import treeLogo from './treeLogo.png';
 import logo512 from './logo512.png';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren} from 'react-circular-progressbar';
+import {buildStyles} from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
 
 
 class App extends Component{
@@ -89,6 +94,7 @@ class App extends Component{
     render() {
         return (
             <div className="App">
+                
                 <h1 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Productivity App </h1>
                 <img  src={treeLogo} alt={'logo'} class="treeLogo"></img>
                 <h3 style={{ padding: "5px 10px", textAlign: "center", color: "grey"}}>Created by Keegan Palmo</h3>
@@ -101,10 +107,32 @@ class App extends Component{
                 <TodoList 
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/>
+                <div style={{ width: 200, height: 200 }}>
+                    <CircularProgressbarWithChildren
+                        value={45}
+                        strokeWidth={8}
+                        styles={buildStyles({
+                        pathColor: "#f00",
+                        trailColor: "transparent"
+                        })}>
+                        {/*
+                        Width here needs to be (100 - 2 * strokeWidth)% 
+                        in order to fit exactly inside the outer progressbar.
+                        */}
+                        <div style={{ width: "84%" }}>
+                        <CircularProgressbar
+                            value={50}
+                            styles={buildStyles({
+                            trailColor: "transparent"
+                            })}
+                        />
+                        </div>
+                    </CircularProgressbarWithChildren>
+                </div>
                 <img  src={logo512} alt={'logo'} class="reactLogo"></img>
-                
 
             </div>
+            
             
         );
     }
