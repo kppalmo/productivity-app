@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TodoForum from './components/TodoForum';
 import TodoList from './components/TodoList';
 import treeLogo from './treeLogo.png';
-import logo512 from './logo512.png';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import {buildStyles} from 'react-circular-progressbar';
@@ -47,6 +46,7 @@ class App extends Component{
         });
         this.setState({todos, todo: ''})
     }
+    
     removeItems = event => { //=> NOT WORKING YET
         event.preventDefault();
         this.setState(prevState => {
@@ -90,7 +90,7 @@ class App extends Component{
             this.saveLocalStorage.bind(this)
         )
     }
-   
+  
     render() {
         return (
             <div className="App">
@@ -128,9 +128,24 @@ class App extends Component{
                         />
                         </div>
                     </CircularProgressbarWithChildren>
+                    <CircularProgressbarWithChildren
+                        value={80}
+                        styles={buildStyles({
+                        pathColor: "#f00",
+                        trailColor: "#eee",
+                        strokeLinecap: "butt"
+                        })}
+                    >
+                        {/* Foreground path */}
+                        <CircularProgressbar
+                        value={60}
+                        styles={buildStyles({
+                        trailColor: "transparent",
+                        strokeLinecap: "butt"
+                        })}
+                        />
+                    </CircularProgressbarWithChildren>
                 </div>
-                <img  src={logo512} alt={'logo'} class="reactLogo"></img>
-
             </div>
             
             
