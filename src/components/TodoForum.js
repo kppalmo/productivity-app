@@ -16,7 +16,7 @@ const  TodoForum = props => {
             
             <button class="button"
                 onClick={props.addTask}>Add a Task</button>
-            <button 
+            <button class="button"
                 onClick={props.removeItems}>Remove Completed</button>
 
         </form>

@@ -47,7 +47,7 @@ class App extends Component{
         this.setState({todos, todo: ''})
       }
     
-      removeItems = event => {
+    removeItems = event => {
         event.preventDefault();
         this.setState(prevState => {
           return {
@@ -56,7 +56,7 @@ class App extends Component{
             })
           }
         })
-      }
+    }
     addLocalStorage() { //takes item in state => renders data on screen
         for (let key in this.state) { //loops through items
             if (localStorage.hasOwnProperty(key)) { //checks to see if keys == keys
@@ -103,7 +103,7 @@ class App extends Component{
                 value ={this.state.todo}
                 inputChangeHandler={this.inputChangeHandler}
                 addTask={this.addTask}
-                removeTask={this.removeItems}/>
+                removeItems={this.removeItems}/>
                 <TodoList 
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/>
