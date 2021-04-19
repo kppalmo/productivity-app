@@ -14,9 +14,9 @@ class App extends Component{
         super(props);
         this.state={
             todos: [{
-                //task:
-                //id:
-                //completedsa
+                //task: '',
+                //id: '',
+                //completed: false
             }],
             todo: ''
         }
@@ -37,22 +37,22 @@ class App extends Component{
             todo: ''
         })
     }
-    toggleComplete = itemId => { //map over array checking todo ID to itemID => if ID=itemID set boolean to opposite 
+    toggleComplete = itemId => {
         const todos = this.state.todos.map(todo => {
-            if (todo.id === itemId) {
-                todo.completed = !todo.completed
-            }
-            return todo
+          if (todo.id === itemId) {
+            todo.completed = !todo.completed
+          }
+          return todo
         });
         this.setState({todos, todo: ''})
-    }
+      }
     
-    removeItems = event => { //=> NOT WORKING YET
+      removeItems = event => {
         event.preventDefault();
         this.setState(prevState => {
           return {
             todos: prevState.todos.filter(todo => {
-              return todo.completed;
+              return !todo.completed;
             })
           }
         })
