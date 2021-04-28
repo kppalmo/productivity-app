@@ -5,7 +5,7 @@ import {buildStyles} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const UpdateBar = props =>{
-     
+
     var blueP = 0;
     var redP = 0;
     var blueS = 0;
@@ -55,25 +55,28 @@ const UpdateBar = props =>{
     return(
         <div style={{ width: 200, height: 200, padding: "10px 500px" }}>   
 
-            <h2>Bar Test 1 {props.answerInfo.plane}</h2>
+            <h2>Bar Test 1 = {props.answerInfo.plane}</h2>
             <CircularProgressbarWithChildren
                 value={redP}
+                text = {"Plane"}
                 styles={buildStyles({
                 pathColor: "#f00",
-                trailColor: "#eee",
+                trailColor: "",
                 strokeLinecap: "butt"
             })}>
             {/* Foreground path */}
             <CircularProgressbar
                 value={blueP}
                 styles={buildStyles({
+                pathColor : "#228B22",
                 trailColor: "transparent",
                 strokeLinecap: "butt"
             })}/>
             </CircularProgressbarWithChildren>   
-            <h2>Bar Test 2 {props.answerInfo.structure}</h2>
+            <h2>Bar Test 2 = {props.answerInfo.structure}</h2>
             <CircularProgressbarWithChildren
                 value={redS}
+                text = {"Struct"}
                 styles={buildStyles({
                 pathColor: "#f00",
                 trailColor: "#eee",
@@ -83,13 +86,15 @@ const UpdateBar = props =>{
             <CircularProgressbar
                 value={blueS}
                 styles={buildStyles({
+                pathColor : "#228B22",
                 trailColor: "transparent",
                 strokeLinecap: "butt"
             })}/>
             </CircularProgressbarWithChildren>   
-            <h2>Bar Test 3 {props.answerInfo.attachment}</h2>
+            <h2>Bar Test 3 = {props.answerInfo.attachment}</h2>
             <CircularProgressbarWithChildren
                 value={redA}
+                text = {"Attach"}
                 styles={buildStyles({
                 pathColor: "#f00",
                 trailColor: "#eee",
@@ -99,13 +104,15 @@ const UpdateBar = props =>{
             <CircularProgressbar
                 value={blueA}
                 styles={buildStyles({
+                pathColor : "#228B22",
                 trailColor: "transparent",
                 strokeLinecap: "butt"
             })}/>
             </CircularProgressbarWithChildren>   
-            <h2>Bar Test 4 {props.answerInfo.zone}</h2>
+            <h2>Bar Test 4 = {props.answerInfo.zone}</h2>
             <CircularProgressbarWithChildren
                 value={redZ}
+                text = {"Zone"}
                 styles={buildStyles({
                 pathColor: "#f00",
                 trailColor: "#eee",
@@ -115,6 +122,7 @@ const UpdateBar = props =>{
             <CircularProgressbar
                 value={blueZ}
                 styles={buildStyles({
+                pathColor : "#228B22",
                 trailColor: "transparent",
                 strokeLinecap: "butt"
             })}/>

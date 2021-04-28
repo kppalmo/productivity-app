@@ -6,8 +6,6 @@ import UpdateBar from './components/cProgressBar.jsx';
 import {example , exampleB} from './tData';
 
 
-
-
 class App extends Component{
     constructor(props) { //constructs empty todos list and todo 
         super(props);
@@ -113,8 +111,7 @@ class App extends Component{
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/> */}
                 <UpdateBar answerInfo={example}/>   
-                <div>
-                </div>             
+                 
             </div>
             
             

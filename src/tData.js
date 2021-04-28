@@ -1,5 +1,5 @@
 export const example = {
-    "plane":".x.o",
+    "plane":"xx.o",
     "structure":"...o", 
     "attachment":"oo.o", 
     "zone":"oo.x"
