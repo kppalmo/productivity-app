@@ -3,6 +3,7 @@ import TodoForum from './components/TodoForum';
 import TodoList from './components/TodoList';
 import treeLogo from './treeLogo.png';
 import UpdateBar from './components/cProgressBar';
+import renderBars from './components/renderBar';
 
 
 
@@ -111,7 +112,8 @@ class App extends Component{
                 <TodoList 
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/> */}
-                <UpdateBar/>
+                {/* <UpdateBar></UpdateBar> */}
+                <renderBars></renderBars>
                 
             </div>
             
