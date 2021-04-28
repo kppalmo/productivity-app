@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import TodoForum from './components/TodoForum';
-import TodoList from './components/TodoList';
-import treeLogo from './treeLogo.png';
-import UpdateBar from './components/cProgressBar';
+// import TodoForum from './components/TodoForum';
+// import TodoList from './components/TodoList';
+// import treeLogo from './treeLogo.png';
+import UpdateBar from './components/cProgressBar.jsx';
+import {example , exampleB} from './tData';
 
 
 
@@ -111,8 +112,9 @@ class App extends Component{
                 <TodoList 
                 todos={this.state.todos}
                 toggleComplete={this.toggleComplete}/> */}
-                <UpdateBar/>
-                
+                <UpdateBar answerInfo={example}/>   
+                <div>
+                </div>             
             </div>
             
             
