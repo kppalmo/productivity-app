@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import TodoForum from './components/TodoForum';
 import TodoList from './components/TodoList';
 import treeLogo from './treeLogo.png';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import { CircularProgressbarWithChildren} from 'react-circular-progressbar';
-import {buildStyles} from 'react-circular-progressbar';
-import 'react-circular-progressbar/dist/styles.css';
+import UpdateBar from './components/cProgressBar';
+
 
 
 
@@ -16,7 +14,9 @@ class App extends Component{
             todos: [{
                 //task: '',
                 //id: '',
-                //completed: false
+                //completed: false,
+                //font: "black",
+                //color: "red"
             }],
             todo: ''
         }
@@ -46,6 +46,9 @@ class App extends Component{
         });
         this.setState({todos, todo: ''})
       }
+    changeColor = itemId => {
+        document.getElementById('itemId').style.color="green";
+    }
     
     removeItems = event => {
         event.preventDefault();
@@ -77,6 +80,7 @@ class App extends Component{
         }
 
     }
+ 
     componentDidMount() {
         this.addLocalStorage(); //calls when page loads => fills in local data from previous state
         window.addEventListener(
@@ -95,7 +99,7 @@ class App extends Component{
         return (
             <div className="App">
                 
-                <h1 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Productivity App </h1>
+                {/* <h1 style={{ padding: "10px 20px", textAlign: "center", color: "grey"}}>Productivity App </h1>
                 <img  src={treeLogo} alt={'logo'} class="treeLogo"></img>
                 <h3 style={{ padding: "5px 10px", textAlign: "center", color: "grey"}}>Created by Keegan Palmo</h3>
                 <TodoForum 
@@ -106,46 +110,9 @@ class App extends Component{
                 removeItems={this.removeItems}/>
                 <TodoList 
                 todos={this.state.todos}
-                toggleComplete={this.toggleComplete}/>
-                <div style={{ width: 200, height: 200 }}>
-                    <CircularProgressbarWithChildren
-                        value={45}
-                        strokeWidth={8}
-                        styles={buildStyles({
-                        pathColor: "#f00",
-                        trailColor: "transparent"
-                        })}>
-                        {/*
-                        Width here needs to be (100 - 2 * strokeWidth)% 
-                        in order to fit exactly inside the outer progressbar.
-                        */}
-                        <div style={{ width: "84%" }}>
-                        <CircularProgressbar
-                            value={50}
-                            styles={buildStyles({
-                            trailColor: "transparent"
-                            })}
-                        />
-                        </div>
-                    </CircularProgressbarWithChildren>
-                    <CircularProgressbarWithChildren
-                        value={80}
-                        styles={buildStyles({
-                        pathColor: "#f00",
-                        trailColor: "#eee",
-                        strokeLinecap: "butt"
-                        })}
-                    >
-                        {/* Foreground path */}
-                        <CircularProgressbar
-                        value={60}
-                        styles={buildStyles({
-                        trailColor: "transparent",
-                        strokeLinecap: "butt"
-                        })}
-                        />
-                    </CircularProgressbarWithChildren>
-                </div>
+                toggleComplete={this.toggleComplete}/> */}
+                <UpdateBar/>
+                
             </div>
             
             

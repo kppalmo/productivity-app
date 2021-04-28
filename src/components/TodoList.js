@@ -9,7 +9,8 @@ const TodoList = props => {
         <Todo
           todo={todo}
           key={id}
-          toggleComplete={props.toggleComplete}/>
+          toggleComplete={props.toggleComplete}
+          changeColor={props.changeColor}/>
       ))}
     </div>
   )

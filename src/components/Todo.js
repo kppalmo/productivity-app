@@ -6,8 +6,11 @@ const Todo = props => {
         key={props.todo.id}
         onClick={event => {
           props.toggleComplete(props.todo.id)
+          //props.changeColor(props.todo.id)
         }}>
-        <p>{props.todo.task}</p>
+          
+        <p >{props.todo.task}</p>
+        
       </div>
     )
   }
